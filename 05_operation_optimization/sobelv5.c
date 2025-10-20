@@ -121,8 +121,9 @@ double sobel(unsigned char *input, unsigned char *output, unsigned char *golden)
 			/* Apply the sobel filter and calculate the magnitude *
 			 * of the derivative.								  */
 			//CONV2D INLINE 
+			//IN THIS VERSION WE OPTIMIZED THE FOLLOW OPERATIONS
 			int help_p_horiz=0, help_p_vert=0;
-
+			
 			//helper to avoid +/i ops with j
                 input_idx = help_4_mult - SIZE + j - 1;
 
