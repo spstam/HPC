@@ -124,7 +124,7 @@ double sobel(unsigned char *input, unsigned char *output, unsigned char *golden)
 				output[i*SIZE + j] = 255;      
 			else
 				output[i*SIZE + j] = (unsigned char)res;
-
+			//FUSED PSNR LOOP HERE
 			t = pow((output[i*SIZE+j] - golden[i*SIZE+j]),2);
 			PSNR += t;
 

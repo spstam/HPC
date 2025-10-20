@@ -37,7 +37,8 @@ unsigned char input[SIZE*SIZE], output[SIZE*SIZE], golden[SIZE*SIZE];
  * operator the operator we apply (horizontal or vertical). The function ret. *
  * value is the convolution of the operator with the neighboring pixels of the*
  * pixel we process.														  */
-//int convolution2D(int posy, int posx, const unsigned char *input, char operator[][3]) {
+//THIS FUNCTION WAS INLINED IN THE SOBEL FUNCTION
+ //int convolution2D(int posy, int posx, const unsigned char *input, char operator[][3]) {
     	//int res=0;
 
         //without vars compacted and math simplifications

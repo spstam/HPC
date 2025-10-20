@@ -41,7 +41,7 @@ int convolution2D(int posy, int posx, const unsigned char *input, char operator[
 	int i, j, res;
   
 	res = 0;
-	//LOOP INTERCHANGE HERE //small change but adds over time on sobel func
+	//LOOP INTERCHANGE HERE //small change but adds over time in sobel func
 	for (i = -1; i <= 1; i++) {
 		for (j = -1; j <= 1; j++) {
 			res += input[(posy + i)*SIZE + posx + j] * operator[i+1][j+1];
@@ -105,7 +105,7 @@ double sobel(unsigned char *input, unsigned char *output, unsigned char *golden)
 	/* This is the main computation. Get the starting time. */
 	clock_gettime(CLOCK_MONOTONIC_RAW, &tv1);
 	/* For each pixel of the output image */
-	//INTERCHANGED THIS LOOP
+	//INTERCHANGED THIS LOOP AS WELL
 	for (i=1; i<SIZE-1; i+=1) {
 		for (j=1; j<SIZE-1; j+=1 ) {
 			/* Apply the sobel filter and calculate the magnitude *
