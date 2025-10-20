@@ -156,17 +156,17 @@ double sobel(unsigned char *input, unsigned char *output, unsigned char *golden)
 			else
 				output[i*SIZE + j] = (unsigned char)res;
 			
+			t = pow((output[i*SIZE+j] - golden[i*SIZE+j]),2);
+			PSNR += t;
 		}
 	}
 
 	/* Now run through the output and the golden output to calculate *
 	 * the MSE and then the PSNR.									 */
-	for (i=1; i<SIZE-1; i++) {
-	 	for ( j=1; j<SIZE-1; j++ ) {
-			t = pow((output[i*SIZE+j] - golden[i*SIZE+j]),2);
-			PSNR += t;
-		}
-	 }
+	// for (i=1; i<SIZE-1; i++) {
+	// 	for ( j=1; j<SIZE-1; j++ ) {
+	// 	}
+	// }
   
 	PSNR /= (double)(SIZE*SIZE);
 	PSNR = 10*log10(65536/PSNR);
