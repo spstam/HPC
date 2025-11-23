@@ -226,18 +226,15 @@ int main(int argc, char **argv) {
         double gpu_val = h_OutputGPU_Host[i];
         
         if (ABS(cpu_val - gpu_val) > accuracy) {
-            errors++;
-            // Print only the first few errors to avoid spamming the console
-            if (errors < 10) {
-                printf("Error at index %d: CPU=%f, GPU=%f\n", i, cpu_val, gpu_val);
-            }
+           	errors = 1;
+			break;
         }
     }
 
     if (errors == 0) {
         printf("TEST PASSED! Results match.\n");
     } else {
-        printf("TEST FAILED with %d errors.\n", errors);
+        printf("TEST FAILED, error found!\n", errors);
     }
 
 
